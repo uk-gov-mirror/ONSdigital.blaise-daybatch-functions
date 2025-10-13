@@ -8,7 +8,7 @@ from functions.questionnaire_functions import (
     create_daybatch_for_questionnaire,
     check_questionnaire_has_daybatch
 )
-from functions.notify_functions import send_email_notification_for_questionnaire_without_daybatch
+from functions.notify_functions import send_email_notification_for_questionnaire_without_daybatch, test_send_email_notification
 from models.config_model import Config
 
 
@@ -40,6 +40,7 @@ def check_daybatches(_request):
     print("Running Cloud Function - check_daybatches")
     config = Config.from_env()
     config.log()
+    test_send_email_notification(config, "TEST_QUESTIONNAIRE")
     installed_questionnaire_data = get_installed_questionnaire_data(config)
     if not installed_questionnaire_data:
         print("No questionnaires installed")
