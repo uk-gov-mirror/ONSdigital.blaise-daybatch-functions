@@ -9,7 +9,7 @@ package-mode = false
 python = "^3.13"
 requests = "^2.34.2"
 python-dotenv = "^1.2.2"
-requests-mock = "^1.9.3"
+requests-mock = "^1.12.1"
 notifications-python-client = "^10.0.1"
 
 [tool.poetry.group.dev.dependencies]
